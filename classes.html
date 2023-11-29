@@ -23,7 +23,14 @@
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
 </head>
-
+<style>
+  img.cliwsa:hover,
+img.cliwsa:focus {
+  
+  transition: .2s;
+  transform: scale(1.1);
+}
+</style>
 <body class="sub_page">
   <div class="hero_area">
     <!-- header section strats -->
@@ -46,13 +53,13 @@
                 <a class="nav-link" href="classes.html">Classes <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="about.html"> Skills</a>
+                <a class="nav-link" href="skills.html"> Skills</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="work.html">Guides </a>
+                <a class="nav-link" href="guidew.html">Guides </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="category.html"> About Us </a>
+                <a class="nav-link" href="aboutus.html"> About Us </a>
               </li>
             </ul>
             <div class="user_option">
@@ -111,18 +118,19 @@
             </p>
             <br>
             <div class="btn-box">
-                <form action="/classes.html">
+                <form>
                     <p >Select your Race:</p>
-                    <select name="classes" id="class">
+                    <select name="classes" id="race">
                       <option value="Human">Human</option>
                       <option value="Elf">Elf</option>
                       <option value="Dwarf">Dwarf</option>
                     
                     </select>
                     <br><br><br>
-                    <a href="" class="btn-1">
+                    <a type="button"  class="btn-1" onclick="showDetail()">
                         Search
-                      </a>
+                    </a>
+                      
                     
                   </form> 
               
@@ -132,12 +140,267 @@
         </div>
 
       </div>
+      <!--Start Human Classes -->
+      <div id="Human" style="display: none;" class="row">
+        <div class="col-md-5">
+          <div class="img-box">
+            <img src="images/Human.webp" alt="">
+          </div>
+        </div>
+        <div class="col-md-7">
+          <div class="detail-box">
+            <div class="heading_container">
+              <h2>
+                Humans
+              </h2>
+              <br><br>
+              <h3>
+                |Brave and fearless
+              </h3>
+            </div>
+            <p>
+              Humans are the most ancient race in Taborea. They are fearless, brave and adventurous. Their ambition and thirst for knowledge have made them prosperous and deserving of a place in history as unbeatable fierce warriors.
+
+Join the humans in their fight against the enemy who threatens the peace in Taborea and achieve victory with Elves and Dwarfs.
+
+If you opt for this race, you can choose between six classes available for Humans. To learn more about the world of humans, you will begin your adventure in the Pioneer Colony, in the Howling Mountains.
+            </p>
+            <br>
+            <div class="heading_container">
+              <h2>
+                Classes
+              </h2>
+            
+            </div> 
+          <div class="row">
+            <div class="col-md-2">
+              <div class="img-box">
+                <img class="cliwsa" src="images/Knight.webp" alt="">
+              </div> <br>
+              <h5> Knight </h5>
+            </div>
+            <div style="display: flexbox;" class="col-md-2">
+              <div class="img-box">
+                <img class="cliwsa" src="images/Warrior.webp" alt="">
+              </div> <br>
+              <h5> Warrior </h5>
+            </div>
+            <div class="col-md-2">
+              <div class="img-box">
+                <img class="cliwsa" src="images/Mage.png" alt="">
+              </div> <br>
+              <h5> Mage </h5>
+            </div>
+            <div class="col-md-2">
+              <div class="img-box">
+                <img class="cliwsa" src="images/Priest.webp" alt="">
+              </div> <br>
+              <h5> Priest </h5>
+            </div>
+            <div class="col-md-2">
+              <div class="img-box">
+                <img class="cliwsa" src="images/Rogue.png" alt="">
+              </div> <br>
+              <h5> Rogue </h5>
+            </div>
+            <div class="col-md-2">
+              <div class="img-box">
+                <img class="cliwsa" src="images/Scout.webp" alt="">
+              </div> <br>
+              <h5> Scout </h5>
+            </div>
+            
+          </div>  
+          
+          </div>
+        </div>
+
+      </div>
+      <!-- end Human Classes -->
+      <!--Start Elf Classes -->
+      <div id="Elf" style="display: none;" class="row">
+        <div class="col-md-5">
+          <div class="img-box">
+            <img src="images/Elves.png" alt="">
+          </div>
+        </div>
+        <div class="col-md-7">
+          <div class="detail-box">
+            <div class="heading_container">
+              <h2>
+                Elves
+              </h2>
+              <br><br>
+              <h3>
+                |Experts at avoiding danger
+              </h3>
+            </div>
+            <p>
+              Elves have always been part of myths and legends of wars as fierce but elegant fighters since immemorial times. They are excellent hunters due to their heightened instincts and senses that have been developed over the years.
+
+              Join them to discover the mysterious elven world that surrounds them and fight side by side with humans and dwarves to achieve the peace in Taborea.
+              
+              If you opt for this race, you can choose between six classes available for Elves. You will be able to take the first steps of this noble breed and learn more details of their history in Valley of Preparation on Elven Island – the starting region for them.
+            </p>
+            <br>
+            <div class="heading_container">
+              <h2>
+                Classes
+              </h2>
+            
+            </div> 
+          <div class="row">
+            <div class="col-md-2">
+              <div class="img-box">
+                <img class="cliwsa" src="images/Warden.webp" alt="">
+              </div> <br>
+              <h5> Warden </h5>
+            </div>
+            <div  class="col-md-2">
+              <div class="img-box">
+                <img class="cliwsa" src="images/Warrior.webp" alt="">
+              </div> <br>
+              <h5> Warrior </h5>
+            </div>
+            <div class="col-md-2">
+              <div class="img-box">
+                <img class="cliwsa" src="images/Mage.png" alt="">
+              </div> <br>
+              <h5> Mage </h5>
+            </div>
+            <div class="col-md-2">
+              <div class="img-box">
+                <img class="cliwsa" src="images/Druid.webp" alt="">
+              </div> <br>
+              <h5> Druid </h5>
+            </div>
+            <div class="col-md-2">
+              <div class="img-box">
+                <img class="cliwsa" src="images/Rogue.png" alt="">
+              </div> <br>
+              <h5> Rogue </h5>
+            </div>
+            <div class="col-md-2">
+              <div class="img-box">
+                <img class="cliwsa" src="images/Scout.webp" alt="">
+              </div> <br>
+              <h5> Scout </h5>
+            </div>
+            
+          </div>  
+          
+          </div>
+        </div>
+
+      </div>
+      <!-- end Elf Classes -->
+      <!--Start Dwarf Classes -->
+      <div id="Dwarf" style="display: none;"  class="row">
+        <div class="col-md-5">
+          <div class="img-box">
+            <img src="images/Dwarves.webp" alt="">
+          </div>
+        </div>
+        <div class="col-md-7">
+          <div class="detail-box">
+            <div class="heading_container">
+              <h2>
+                Dwarves
+              </h2>
+              <br><br>
+              <h3>
+                |Workers of darkness
+              </h3>
+            </div>
+            <p>
+              Although they remained hidden in the depths of their caverns for a long time, the dwarfs have returned to claim their honor position in Taborea. They are expert users of war machines that combined with dark and runic magic gives them incredible strength and unprecedented power, making them the new lords of the battlefield.
+
+Let yourself be involved by the incredible combination of magic and strength, and become one of these indomitable warriors who strike fear into the hearts of their opponents.
+
+If you opt for this race, you can choose between six classes available for Dwarves. Adventure awaits you in Yrvandis Hollows.
+            </p>
+            <br>
+            <div class="heading_container">
+              <h2>
+                Classes
+              </h2>
+            
+            </div> 
+          <div class="row">
+            <div class="col-md-2">
+              <div class="img-box">
+                <img class="cliwsa" src="images/Champion.webp" alt="">
+              </div> <br>
+              <h5> Champion </h5>
+            </div>
+            <div style="display: flexbox;" class="col-md-2">
+              <div class="img-box">
+                <img class="cliwsa" src="images/Warrior.webp" alt="">
+              </div> <br>
+              <h5> Warrior </h5>
+            </div>
+            <div class="col-md-2">
+              <div class="img-box">
+                <img class="cliwsa" src="images/Mage.png" alt="">
+              </div> <br>
+              <h5> Mage </h5>
+            </div>
+            <div class="col-md-2">
+              <div class="img-box">
+                <img class="cliwsa" src="images/Priest.webp" alt="">
+              </div> <br>
+              <h5> Priest </h5>
+            </div>
+            <div class="col-md-2">
+              <div class="img-box">
+                <img class="cliwsa" src="images/Rogue.png" alt="">
+              </div> <br>
+              <h5> Rogue </h5>
+            </div>
+            <div class="col-md-2">
+              <div class="img-box">
+                <img class="cliwsa" src="images/Warlock.webp" alt="">
+              </div> <br>
+              <h5> Warlock </h5>
+            </div>
+            
+          </div>  
+          
+          </div>
+        </div>
+
+      </div>
+      <!-- end Dwarf Classes -->
     </div>
   </section>
 
   <!-- end experience section -->
 
+  <script>
 
+    function showDetail(){
+      e = document.getElementById("race");
+      var value = e.value; 
+      if (value == "Human") {
+        document.getElementById("Human").style.display = "flex";
+        document.getElementById("Elf").style.display = "none";
+        document.getElementById("Dwarf").style.display = "none";
+      }else if (value == "Dwarf"){
+        document.getElementById("Human").style.display = "none";
+        document.getElementById("Elf").style.display = "none";
+        document.getElementById("Dwarf").style.display = "flex";
+      } else if (value == "Elf") {
+        document.getElementById("Human").style.display = "none";
+        document.getElementById("Elf").style.display = "flex";
+        document.getElementById("Dwarf").style.display = "none";
+
+      }
+
+     
+      
+
+    }
+  </script>
 
   <!-- info section -->
 
@@ -182,13 +445,13 @@
                     <a class="" href="index.html">Home <span class="sr-only">(current)</span></a>
                   </li>
                   <li class="">
-                    <a class="" href="about.html">About </a>
+                    <a class="" href="classes.html">classes </a>
                   </li>
                   <li class="">
-                    <a class="" href="work.html">Work </a>
+                    <a class="" href="skills.html">skills </a>
                   </li>
                   <li class="">
-                    <a class="" href="category.html">Category </a>
+                    <a class="" href="guides.html">guides </a>
                   </li>
                 </ul>
               </div>
