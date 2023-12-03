@@ -110,6 +110,223 @@
               List of tools:
             </p>
             <br>
+            <!-- Trigger/Open The Modal -->
+            <button class="btn-primary" id="myBtn">Tier Calculator</button>
+            <!-- The Modal -->
+            <div id="myModal" class="modal">
+
+              <!-- Modal content -->
+              <div class="modal-content">
+                <div class="modal-header">
+                   <br>
+                  <h3>Chronicles of Arcadia - Tier Calculator</h3>
+                  <span class="close">&times;</span>
+                  <br>
+                </div>
+                <div class="modal-body" id="calculations" style="display: block;">
+                  <form>
+                    <p >Tier of starting items:</p>
+                    <input type="number" id="startingItemTier" value="0">
+                    <p >Tier  of desired Mana Stones:</p>
+                    <input type="number" id="desiredStoneTier" value="0">
+                    <p >Amount of desired Mana stones:</p>
+                    <input type="number" id="ManaStonesAmount" value="0">
+
+                    <p >Select type of tiering required:</p>
+                    <select name="typeofTiers" id="types">
+                      <option value="Clean">Clean</option>
+                      <option value="Dirty">Dirty</option>
+                    </select>
+                    <br><br><br>
+                    <button type="button"  class="btn-primary" onclick="calculate()">
+                        Calculate
+                    </button>
+                      
+                    
+                  </form> 
+                </div>
+                <div class="modal-body" id="results"style="display: none;">
+                  <b id="summary"> </b>
+                  <p >Number of items needed: </p> <b id="ItemsNeeded"> </b>
+                  <p >Number of charges needed:</p> <b id="ChargesNeeded"> </b>
+                  <p >Number of PFS needed:</p> <b id="PFSNeeded"> </b>
+                  <p >Amout of Gold needed:</p> <b id="GoldNeeded"> </b><br><Br>
+                  <button type="button"  class="btn btn-success" onclick="startover()">
+                    Startover
+                </button>
+                </div>
+                <div style="text-align: left;" class="modal-footer">
+                  <h5>Values can be subject to change with future patches...</h5>
+                </div>
+              </div>
+
+            </div>
+            <style>
+              
+              /* The Modal (background) */
+              .modal {
+                display: none; /* Hidden by default */
+                position: fixed; /* Stay in place */
+                z-index: 1; /* Sit on top */
+                padding-top: 100px; /* Location of the box */
+                left: 0;
+                top: 0;
+                width: 100%; /* Full width */
+                height: 100%; /* Full height */
+                overflow: auto; /* Enable scroll if needed */
+                background-color: rgb(0,0,0); /* Fallback color */
+                background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+              }
+              
+              /* Modal Content */
+              .modal-content {
+                position: relative;
+                background-color: #fefefe;
+                margin: auto;
+                padding: 0;
+                border: 1px solid #888;
+                width: 80%;
+                box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+                -webkit-animation-name: animatetop;
+                -webkit-animation-duration: 0.4s;
+                animation-name: animatetop;
+                animation-duration: 0.4s
+              }
+              
+              /* Add Animation */
+              @-webkit-keyframes animatetop {
+                from {top:-300px; opacity:0} 
+                to {top:0; opacity:1}
+              }
+              
+              @keyframes animatetop {
+                from {top:-300px; opacity:0}
+                to {top:0; opacity:1}
+              }
+              
+              /* The Close Button */
+              .close {
+                color: white;
+                float: right;
+                font-size: 28px;
+                font-weight: bold;
+              }
+              
+              .close:hover,
+              .close:focus {
+                color: #000;
+                text-decoration: none;
+                cursor: pointer;
+              }
+              
+              .modal-header {
+                padding: 2px 16px;
+                background-color: #1a2e35;
+                color: white;
+              }
+              
+              .modal-body {padding: 2px 16px;
+                text-align: center;
+              
+              }
+              
+              .modal-footer {
+                padding: 2px 16px;
+                background-color: #1a2e35;
+                color: white;
+              }
+              </style>
+              <script>
+                // Get the modal
+                var modal = document.getElementById("myModal");
+                
+                // Get the button that opens the modal
+                var btn = document.getElementById("myBtn");
+                
+                // Get the <span> element that closes the modal
+                var span = document.getElementsByClassName("close")[0];
+                
+                // When the user clicks the button, open the modal 
+                btn.onclick = function() {
+                  modal.style.display = "block";
+                }
+                
+                // When the user clicks on <span> (x), close the modal
+                span.onclick = function() {
+                  modal.style.display = "none";
+                }
+                
+                // When the user clicks anywhere outside of the modal, close it
+                window.onclick = function(event) {
+                  if (event.target == modal) {
+                    modal.style.display = "none";
+                  }
+                }
+
+                function calculate(){
+                  
+                  document.getElementById("calculations").style.display = "none";
+                  document.getElementById("results").style.display = "block";
+                  var starting = document.getElementById("startingItemTier").value;
+                  var desired = document.getElementById("desiredStoneTier").value;
+                  var amount = document.getElementById("ManaStonesAmount").value;
+                  var typeOfStones = document.getElementById("types").value;
+                  if (amount >= 1){
+                    document.getElementById("summary").innerHTML = "In order to create " + amount +"x Tier"+ desired + " Mana Stones you need:";
+
+                  }else if (amount == 0){
+                    document.getElementById("summary").innerHTML = "A3mou An amount of desired mana stones bigger or equal to 1 need to be set";
+                  }
+                  
+
+
+                  var numUpgardes = desired - starting;
+                  var items = (3**numUpgardes)*amount;
+                  var items2 =3**numUpgardes;
+                  var pfs = 0;
+                  var gold = 0;
+                  var charges = 0;
+                  var somme = 1;
+                  if (typeOfStones == "Clean"){
+                    pfs = items ;
+                    gold = 0;
+                    document.getElementById("PFSNeeded").innerHTML = pfs;                  
+                    document.getElementById("GoldNeeded").innerHTML = "0";
+
+                  } else if (typeOfStones == "Dirty"){
+                    gold = 10000 * items ;
+                    pfs = 0;
+                    document.getElementById("GoldNeeded").innerHTML = gold.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                    document.getElementById("PFSNeeded").innerHTML = "0";
+                  }
+                   
+                  while(items2/3 > 1 ){
+                    
+                    somme = somme + items2/3;
+                    items2 = items2/3 ;
+
+
+
+                  }
+                  
+                  charges = (somme * amount) + items;
+                  
+                  
+                  
+                  document.getElementById("ItemsNeeded").innerHTML = items;
+                  document.getElementById("ChargesNeeded").innerHTML = charges;
+                  
+                  
+
+
+                }
+                function startover(){
+                  document.getElementById("calculations").style.display = "block";
+                  document.getElementById("results").style.display = "none";
+
+                
+                }
+                </script>
             
           </div>
         </div>
